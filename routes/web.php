@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,8 @@ Route::post('/logout', [Auth\LogoutController::class, 'store'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function(){
     
+    Route::get('/products/listing/{slug}', [ProductController\Show::class, 'index'])->name('products.show');
+    
     Route::group([
         'prefix' => 'admin',
         'as' => 'admin.',
@@ -49,5 +52,13 @@ Route::group(['middleware' => 'auth'], function(){
 
         Route::get('/users', [UserController\Index::class, 'index'])->name('users.index');
     
+        //produt routes
+        Route::get('/products', [ProductController\Index::class, 'index'])->name('products.index');
+
+        Route::get('/products/create', [ProductController\Create::class, 'index'])->name('products.create');
+
+        Route::get('/products/edit/{product}', [ProductController\Update::class, 'index'])->name('products.edit');
+        //----
+
     });
 });
