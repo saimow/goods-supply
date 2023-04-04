@@ -9,7 +9,8 @@
     </template>
     
     <script>
-    import FsLightbox from "fslightbox-vue/v3";
+    import FsLightboxV3 from "fslightbox-vue/v3";
+    const FsLightbox = FsLightboxV3.default || FsLightboxV3;
     
     export default {
         props:{
