@@ -34,7 +34,7 @@
                         <label for="name" class="form-label mb-1">
                             Name <span class="text-danger">*</span>
                         </label>
-                        <input class="form-control @error('name') is-invalid @enderror" value="{{ @old('name', auth()->user()->name) }}" type="text" name="name" placeholder="Enter your name" required>
+                        <input class="form-control @error('name') is-invalid @enderror" value="{{ old('name', auth()->user()->name) }}" type="text" name="name" placeholder="Enter your name" required>
                         @error('name')
                             <span class="invalid-feedback">
                                 {{ $message }}
@@ -46,7 +46,7 @@
                         <label for="email" class="form-label mb-1">
                             Email <span class="text-danger">*</span>
                         </label>
-                        <input class="form-control @error('email') is-invalid @enderror" value="{{ @old('email', auth()->user()->email) }}" type="email" name="email" placeholder="Enter your email" required>
+                        <input class="form-control @error('email') is-invalid @enderror" value="{{ old('email', auth()->user()->email) }}" type="email" name="email" placeholder="Enter your email" required>
                         @error('email')
                             <span class="invalid-feedback">
                                 {{ $message }}

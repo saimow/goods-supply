@@ -11,7 +11,7 @@
     
                         <div class="mb-3">
                             <label for="name" class="form-label mb-1">Name</label>
-                            <input class="form-control @error('name') is-invalid @enderror" value="{{ @old('name') }}" type="text" name="name" placeholder="Enter your name" required autofocus>
+                            <input class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" type="text" name="name" placeholder="Enter your name" required autofocus>
                             @error('name')
                                 <span class="invalid-feedback">
                                     {{ $message }}
@@ -21,7 +21,7 @@
     
                         <div class="mb-3">
                             <label for="email" class="form-label mb-1">Email</label>
-                            <input class="form-control @error('email') is-invalid @enderror" value="{{ @old('email') }}" type="text" name="email" placeholder="Enter your email address" required>
+                            <input class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" type="text" name="email" placeholder="Enter your email address" required>
                             @error('email')
                                 <span class="invalid-feedback">
                                     {{ $message }}
